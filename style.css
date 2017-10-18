@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+
+
+.container {
+    font-family: "EB Garamond", serif;
+}
+
+.title {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+img.home {
+    margin-bottom: 2em;
+}
