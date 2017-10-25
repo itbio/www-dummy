@@ -9,15 +9,11 @@ $(document).ready(function(){
 });
 
 SIZE = 20;
+TILT_RADIANS = 10 * Math.PI / 180 ;  // 10 degrees
 
 function init(){
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera( 70, 1, 1, 1000 );
-    // Convert camera fov degrees to radians
-    var fov = camera.fov * ( Math.PI / 180 ); 
-
-    // Calculate the camera distance
-    var distance = Math.abs( SIZE / Math.sin( fov / 2 ) );
+    camera = new THREE.PerspectiveCamera( 70, 1, 18, 1000000 );
 
     var light = new THREE.DirectionalLight( 0xffffff );
     light.position.set( 0, 1, 1 ).normalize();
@@ -32,8 +28,7 @@ function init(){
   
     mesh = new THREE.Mesh(geometry, material );
     mesh.position.z = -40;
-    mesh.position.y = -0;
-    //mesh.rotation.z += 0.35;
+    mesh.rotation.z += TILT_RADIANS;
     scene.add( mesh );
   
     renderer = new THREE.WebGLRenderer({alpha: true});
@@ -47,8 +42,8 @@ function init(){
 }
 
 function animate(){
-    //mesh.rotation.x += 0.001;
-    mesh.rotation.y += 0.0003;
+    var yaxis = new THREE.Vector3( 0, 1, 0 );
+    mesh.rotateOnAxis( yaxis, 0.0003);
     render();
     requestAnimationFrame( animate );
 }
