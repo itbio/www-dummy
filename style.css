@@ -1,19 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
 
-
 .title {
     font-family: "Source Sans Pro", sans-serif;
-    position: absolute;
-    padding: .6em;
-    top: 1em;
-    left: 1em;
     font-weight: 300;
-    z-index: 10;
-    background-color: rgba(1,1,1,.05);
     font-size: 300%;
 }
 
-canvas {
-    width: 100%;
-    height: 100%;
-}
